@@ -38,6 +38,8 @@ class StoryBrain {
         choice2: '')
   ];
 
+  int _storyNumber = 0;
+
 //TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
 
 //TODO: Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
@@ -61,6 +63,21 @@ class StoryBrain {
 //TODO: Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
 
 //TODO: Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
+  void nextStory(int choiceNumber) {
+    if (choiceNumber == 1 && _storyNumber == 0) {
+      _storyNumber = 2;
+    } else if (choiceNumber == 2 && _storyNumber == 0) {
+      _storyNumber = 1;
+    } else if (choiceNumber == 1 && _storyNumber == 1) {
+      _storyNumber = 2;
+    } else if (choiceNumber == 2 && _storyNumber == 1) {
+      _storyNumber = 3;
+    } else if (choiceNumber == 1 && _storyNumber == 2) {
+      _storyNumber = 5;
+    } else if (choiceNumber == 2 && _storyNumber == 2) {
+      _storyNumber = 4;
+    }
+  }
 
 //TODO: Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
 
